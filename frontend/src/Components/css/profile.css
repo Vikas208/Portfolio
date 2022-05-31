@@ -1,0 +1,60 @@
+.profile {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       /* min-height: 100vh; */
+       position: relative;
+       flex-wrap: wrap-reverse;
+       margin: auto;
+       user-select: none;
+       /* overflow-x: hidden; */
+       /* border: 1px solid white; */
+}
+
+.profileleft {
+       display: block;
+       /* border: 1px solid wheat; */
+       width: 50%;
+       line-height: 1.09;
+       letter-spacing: 1.2px;
+       /* word-spacing: 1px; */
+       font-size: 30px;
+       padding: 20px;
+       color: rgb(223 223 223);
+       box-sizing: border-box;
+       margin-right: 10px;
+}
+
+.profileRight {
+       /* border: 1px solid burlywood; */
+       padding: 10px;
+}
+
+.profileRight>img {
+       width: 12em;
+       height: 12em;
+       border-radius: 999px;
+       object-fit: contain;
+       object-fit: contain;
+       border-radius: 10px;
+       box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+@media screen and (max-width:800px) {
+
+
+       .profileleft {
+              font-size: large;
+              width: 70%;
+              text-align: center;
+       }
+
+
+
+       .profileleft>p {
+              text-align: justify;
+              word-spacing: normal;
+              margin-top: 10px;
+              font-size: larger;
+       }
+}

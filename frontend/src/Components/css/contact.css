@@ -1,0 +1,78 @@
+:root {
+       --bgDarkColor: #0c0224;
+       --darkColor: white;
+       --bgLightColor: rgb(153, 171, 202);
+       --lightColor: rgb(14, 12, 12);
+}
+
+.contactMe {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-wrap: wrap;
+       /* border: 1px solid white; */
+       padding: 10px;
+       width: 90%;
+       margin: auto;
+}
+
+.contactMe form {
+       /* border: 1px solid white; */
+       flex: 0.7;
+       display: flex;
+       flex-direction: column;
+       padding: 10px;
+}
+
+.contactMe form * {
+       margin-top: 10px;
+       padding: 20px;
+       background-color: transparent;
+       border: none;
+       color: var(--darkColor);
+       font-family: 'League Spartan', sans-serif;
+       font-size: large;
+       transition: all 300ms;
+       -webkit-transition: all 300ms;
+       outline: none;
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.contactMe form input:focus,
+.contactMe form textarea:focus {
+       border-bottom: 2px solid white;
+}
+
+.contactMe form button {
+       cursor: pointer;
+}
+
+.contactMe>span {
+       flex: 0.3;
+
+}
+
+.contactMe>span>img {
+       width: 30vw;
+       height: 50vh;
+       object-fit: contain;
+}
+
+
+.error {
+       transition: all 300ms;
+       -webkit-transition: all 300ms;
+}
+
+@media screen and (max-width:800px) {
+       .contactMe {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+       }
+
+       .contactMe form {
+              width: 100%;
+       }
+
+}
