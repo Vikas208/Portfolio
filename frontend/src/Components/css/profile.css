@@ -58,3 +58,11 @@
               font-size: larger;
        }
 }
+
+@media screen and (max-width:470px) {
+
+       .profileleft>p {
+              text-align: left;
+
+       }
+}

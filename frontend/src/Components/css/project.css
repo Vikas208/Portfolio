@@ -209,6 +209,13 @@
 
 }
 
+@media screen and (max-width:500px) {
+       .desc>p {
+              font-size: 4.3vw;
+              text-align: left;
+       }
+}
+
 .credit {
        font-size: 10px;
 }

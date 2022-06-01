@@ -194,6 +194,12 @@
        }
 }
 
+@media only screen and (max-width:400px) {
+       .aboutmeleft>summary {
+              text-align: left;
+       }
+}
+
 @media screen and (max-width:1000px) {
        .aboutmeleft>p {
               font-size: 4.2vw;
