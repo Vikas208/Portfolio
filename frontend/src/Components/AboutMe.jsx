@@ -56,7 +56,7 @@ function AboutMe() {
           </h1>
           <section className="aboutme">
             <section className="aboutmeleft">
-              <p>{about?.about && about?.about}</p>
+              <summary>{about?.about && about?.about}</summary>
             </section>
             <section className="aboutmeRight" data-carousel>
               <button
@@ -92,43 +92,89 @@ function AboutMe() {
               </ul>
             </section>
           </section>
-
-          <section className="skill">
-            <h1
-              style={{
-                textAlign: "center",
-                marginTop: "10px",
-                textDecoration: "underline",
-                textDecorationColor: "rgb(227 141 13)",
-              }}
-            >
-              <b
+          {about?.education && typeof about?.education === "object" && (
+            <section className="education">
+              <h1
                 style={{
-                  color: "rgb(227 141 13)",
+                  textAlign: "center",
+                  marginTop: "10px",
                   textDecoration: "underline",
-                  textDecorationColor: "white",
+                  textDecorationColor: "rgb(227 141 13)",
                 }}
               >
-                My
-              </b>
-              <b> Skills</b>
-            </h1>
-
-            <div className="images">
-              {about?.skills &&
-                Object.keys(about?.skills)?.map((element, index) => {
+                <b
+                  style={{
+                    color: "rgb(227 141 13)",
+                    textDecoration: "underline",
+                    textDecorationColor: "white",
+                  }}
+                >
+                  My
+                </b>
+                <b> Education</b>
+              </h1>
+              {about?.education &&
+                typeof about?.education === "object" &&
+                about?.education?.map((element, index) => {
                   return (
-                    <span
-                      key={index}
-                      className={`card`}
-                      style={{ "--i": index + 1 }}
-                    >
-                      <img src={about?.skills[element]} alt="" />
-                    </span>
+                    <article className="edu" key={index}>
+                      <span className="timeline">{element?.time}</span>
+                      <section className="organization">
+                        <label htmlFor="organization">Organization</label>
+                        <p>{element?.organization}</p>
+                      </section>
+                      <section className="course">
+                        <label htmlFor="course">Course</label>
+                        <section>
+                          <summary>{element?.course}</summary>
+                          <small>
+                            <b>{element?.grades}</b>
+                          </small>
+                        </section>
+                      </section>
+                    </article>
                   );
                 })}
-            </div>
-          </section>
+            </section>
+          )}
+          {about?.skills && (
+            <section className="skill">
+              <h1
+                style={{
+                  textAlign: "center",
+                  marginTop: "10px",
+                  textDecoration: "underline",
+                  textDecorationColor: "rgb(227 141 13)",
+                }}
+              >
+                <b
+                  style={{
+                    color: "rgb(227 141 13)",
+                    textDecoration: "underline",
+                    textDecorationColor: "white",
+                  }}
+                >
+                  My
+                </b>
+                <b> Skills</b>
+              </h1>
+
+              <div className="images">
+                {about?.skills &&
+                  Object.keys(about?.skills)?.map((element, index) => {
+                    return (
+                      <span
+                        key={index}
+                        className={`card`}
+                        style={{ "--i": index + 1 }}
+                      >
+                        <img src={about?.skills[element]} alt="" />
+                      </span>
+                    );
+                  })}
+              </div>
+            </section>
+          )}
         </div>
       )}
     </>

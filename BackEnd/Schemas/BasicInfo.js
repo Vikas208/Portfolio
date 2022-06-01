@@ -24,6 +24,9 @@ const info = new mongoose.Schema({
        },
        resume: {
               type: String
+       },
+       education: {
+              type: Array,
        }
 
 })

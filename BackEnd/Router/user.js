@@ -13,7 +13,7 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 router.get("/getInfo", async (req, res) => {
        try {
-              let data = await BasicInfo.findOne({}, { about: 0, skills: 0, resume: 0, socialMedia: 0 }).exec();
+              let data = await BasicInfo.findOne({}, { about: 0, skills: 0, resume: 0, socialMedia: 0, education: 0 }).exec();
               res.status(200).json(data);
        } catch (err) {
               res.status(500).json({ "message": "Something is Wrong" });

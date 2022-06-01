@@ -48,7 +48,7 @@
        height: 300px;
 }
 
-.aboutmeleft>p {
+.aboutmeleft>summary {
        /* border: 2px solid red; */
        line-height: 1.04;
        letter-spacing: 1.02px;
@@ -111,6 +111,61 @@
 /* .card>span {
        margin-top: 20px;
 } */
+
+
+.education {
+       /* border: 1px solid white; */
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       margin: 10px;
+       width: 70%;
+       margin: auto;
+
+}
+
+
+.edu {
+       padding: 10px;
+       margin: 10px;
+       border-left: 3px solid #eb971b;
+       line-height: 0.7cm;
+       /* border: 1px solid black; */
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+
+}
+
+.timeline {
+       color: rgb(184, 187, 186);
+       font-size: medium;
+
+}
+
+
+.course>label,
+.organization>label {
+       color: rgba(255, 255, 255, 0.678);
+
+}
+
+
+.course>section {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+}
+
+.course section>summary {
+       font-size: medium;
+       margin-top: 4px
+}
+
+.course>section>small {
+       float: right;
+}
 
 @keyframes floating {
        0% {
