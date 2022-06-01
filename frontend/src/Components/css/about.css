@@ -126,13 +126,13 @@
        }
 }
 
-@media only screen and(max-width:800px) {
+@media only screen and (max-width:800px) {
        .card {
               transform: rotateY(calc(var(--i)*328deg)) translateZ(200px);
        }
 }
 
-@media only screen and(max-width:400px) {
+@media only screen and (max-width:400px) {
        .card {
               transform: rotateY(calc(var(--i)*328deg)) translateZ(125px);
               margin: auto
