@@ -26,7 +26,7 @@ function Navbar() {
           <img src="/logo.png" alt="" />
         </a>
       </section>
-      <section className="hamburger">
+      <section className="hamburger" onClick={handleHamburger}>
         <div></div>
         <div></div>
         <div></div>
@@ -72,18 +72,15 @@ export default Navbar;
 
 //
 
-window.addEventListener("load", () => {
-  let div = document.getElementsByClassName("hamburger")[0];
-  div.addEventListener("click", (e) => {
-    document.getElementsByClassName("navbar")[0].classList.toggle("visible");
-  });
+const handleHamburger = (e) => {
+  document.getElementsByClassName("navbar")[0].classList.toggle("visible");
+};
 
-  let links = document.getElementsByClassName("link");
-  for (let i = 0; i < links.length; ++i) {
-    links[i].addEventListener("click", (e) => {
-      let activelink = document.querySelector("[data-active-link]");
-      if (activelink) delete activelink.dataset.activeLink;
-      e.target.dataset.activeLink = true;
-    });
-  }
-});
+let links = document.getElementsByClassName("link");
+for (let i = 0; i < links.length; ++i) {
+  links[i].addEventListener("click", (e) => {
+    let activelink = document.querySelector("[data-active-link]");
+    if (activelink) delete activelink.dataset.activeLink;
+    e.target.dataset.activeLink = true;
+  });
+}
