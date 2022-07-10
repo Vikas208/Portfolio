@@ -35,25 +35,7 @@ function AboutMe() {
         <Loader />
       ) : (
         <div className="about headingTitle">
-          <h1
-            style={{
-              textAlign: "center",
-              marginTop: "10px",
-              textDecoration: "underline",
-              textDecorationColor: "rgb(227 141 13)",
-            }}
-          >
-            <b
-              style={{
-                color: "rgb(227 141 13)",
-                textDecoration: "underline",
-                textDecorationColor: "white",
-              }}
-            >
-              Welcome
-            </b>
-            , In About Page
-          </h1>
+          <Header text1={"Welcome"} text2=" About Page" />
           <section className="aboutme">
             <section className="aboutmeleft">
               <summary>{about?.about && about?.about}</summary>
@@ -92,27 +74,9 @@ function AboutMe() {
               </ul>
             </section>
           </section>
-          {about?.education && typeof about?.education === "object" && (
+          {about && about?.education && typeof about?.education === "object" && (
             <section className="education">
-              <h1
-                style={{
-                  textAlign: "center",
-                  marginTop: "10px",
-                  textDecoration: "underline",
-                  textDecorationColor: "rgb(227 141 13)",
-                }}
-              >
-                <b
-                  style={{
-                    color: "rgb(227 141 13)",
-                    textDecoration: "underline",
-                    textDecorationColor: "white",
-                  }}
-                >
-                  My
-                </b>
-                <b> Education</b>
-              </h1>
+              <Header text1="My" text2="Education" />
               {about?.education &&
                 typeof about?.education === "object" &&
                 about?.education?.map((element, index) => {
@@ -137,28 +101,14 @@ function AboutMe() {
                 })}
             </section>
           )}
-          {about?.skills && (
+          {about && about?.work && typeof about?.work === "object" && (
+            <div class="work">
+              <Header text1={"Work"} text2="Expreince" />
+            </div>
+          )}
+          {about && about?.skills && (
             <section className="skill">
-              <h1
-                style={{
-                  textAlign: "center",
-                  marginTop: "10px",
-                  textDecoration: "underline",
-                  textDecorationColor: "rgb(227 141 13)",
-                }}
-              >
-                <b
-                  style={{
-                    color: "rgb(227 141 13)",
-                    textDecoration: "underline",
-                    textDecorationColor: "white",
-                  }}
-                >
-                  My
-                </b>
-                <b> Skills</b>
-              </h1>
-
+              <Header text1={"My"} text2="Skills" />
               <div className="images">
                 {about?.skills &&
                   Object.keys(about?.skills)?.map((element, index) => {
@@ -182,3 +132,27 @@ function AboutMe() {
 }
 
 export default AboutMe;
+
+function Header({ text1, text2 }) {
+  return (
+    <h1
+      style={{
+        textAlign: "center",
+        marginTop: "10px",
+        textDecoration: "underline",
+        textDecorationColor: "rgb(227 141 13)",
+      }}
+    >
+      <b
+        style={{
+          color: "rgb(227 141 13)",
+          textDecoration: "underline",
+          textDecorationColor: "white",
+        }}
+      >
+        {text1}
+      </b>
+      <b> {text2}</b>
+    </h1>
+  );
+}
