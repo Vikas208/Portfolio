@@ -42,6 +42,7 @@ function ContactMe() {
   };
 
   useEffect(() => {
+    document.title = "Contact Me";
     activeLink("contactme");
     return () => {
       setIsError(undefined);

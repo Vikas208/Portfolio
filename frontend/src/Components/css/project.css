@@ -194,7 +194,7 @@
 
 @media screen and (max-width:1000px) {
        .desc>p {
-              font-size: 4.3vw;
+              font-size: 4.3vh;
        }
 
        .technologies>p {

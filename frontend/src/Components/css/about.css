@@ -113,7 +113,7 @@
 } */
 
 
-.education {
+.centerBox {
        /* border: 1px solid white; */
        display: flex;
        flex-direction: column;
@@ -126,7 +126,7 @@
 }
 
 
-.edu {
+.details {
        padding: 10px;
        margin: 10px;
        border-left: 3px solid #eb971b;

@@ -13,6 +13,7 @@ function Project() {
   const navigation = useNavigate();
 
   useEffect(() => {
+    document.title = "Projects";
     let bgColor = localStorage.getItem("cardColor");
     bgColor && setbgColor(bgColor);
   }, [changeTheme]);

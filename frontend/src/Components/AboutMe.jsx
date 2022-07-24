@@ -10,6 +10,7 @@ function AboutMe() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "About Me";
     activeLink("aboutme");
     let getData = async () => {
       let response = await fetch("/user/about/", { method: "GET" });
@@ -75,13 +76,13 @@ function AboutMe() {
             </section>
           </section>
           {about && about?.education && typeof about?.education === "object" && (
-            <section className="education">
+            <section className="centerBox">
               <Header text1="My" text2="Education" />
               {about?.education &&
                 typeof about?.education === "object" &&
                 about?.education?.map((element, index) => {
                   return (
-                    <article className="edu" key={index}>
+                    <article className="details" key={index}>
                       <span className="timeline">{element?.time}</span>
                       <section className="organization">
                         <label htmlFor="organization">Organization</label>
@@ -102,13 +103,36 @@ function AboutMe() {
             </section>
           )}
           {about && about?.work && typeof about?.work === "object" && (
-            <div class="work">
+            <div className="centerBox">
               <Header text1={"Work"} text2="Expreince" />
+              {about?.work.map((element, index) => {
+                return (
+                  <article className="details" key={index}>
+                    <span className="timeline">{element?.time}</span>
+                    <section className="organization">
+                      <label htmlFor="organization">Company</label>
+                      <p>{element?.company}</p>
+                    </section>
+                    <section className="course">
+                      <label htmlFor="course">Role</label>
+                      <section>
+                        <summary>{element?.role}</summary>
+                      </section>
+                    </section>
+                    <section className="course">
+                      <label htmlFor="course">Website</label>
+                      <section>
+                        <summary>{element?.website}</summary>
+                      </section>
+                    </section>
+                  </article>
+                );
+              })}
             </div>
           )}
           {about && about?.skills && (
             <section className="skill">
-              <Header text1={"My"} text2="Skills" />
+              <Header text1={"Skills"} text2="" />
               <div className="images">
                 {about?.skills &&
                   Object.keys(about?.skills)?.map((element, index) => {

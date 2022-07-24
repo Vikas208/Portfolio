@@ -18,6 +18,7 @@ function ProjectDescription() {
       if (response.status === 200) {
         let data = await response.json();
         setProject(data);
+        document.title = data && data[0]?.name ? data[0]?.name : "Project";
         setLoading(false);
       } else {
         navigation("/error");
