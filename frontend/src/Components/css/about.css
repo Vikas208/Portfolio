@@ -162,6 +162,10 @@
        font-size: medium;
        margin-top: 4px
 }
+.course section>a {
+       text-decoration: none;
+       color:white;
+}
 
 .course>section>small {
        float: right;

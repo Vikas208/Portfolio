@@ -122,7 +122,7 @@ function AboutMe() {
                     <section className="course">
                       <label htmlFor="course">Website</label>
                       <section>
-                        <summary>{element?.website}</summary>
+                        <a href={element?.website}>{element?.website}</a>
                       </section>
                     </section>
                   </article>
